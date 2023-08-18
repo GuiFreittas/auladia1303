@@ -1,0 +1,24 @@
+class Motor:
+    def __init__(self, tipo, potencia):
+        self.tipo = tipo
+        self.potencia = potencia
+
+class Carro:
+    def __init__(self, motor, marca, modelo):
+        self.motor = motor
+        self.marca = marca
+        self.modelo = modelo
+
+motor_gasolina = Motor("Gasolina", 150)
+motor_eletrico = Motor("Elétrico", 200)
+
+carro_gasolina = Carro(motor_gasolina, "Toyota", "Corolla")
+carro_eletrico = Carro(motor_eletrico, "Tesla", "Model S")
+
+print(f"Carro a gasolina: {carro_gasolina.marca} {carro_gasolina.modelo}")
+print(f"Tipo de motor: {carro_gasolina.motor.tipo}")
+print(f"Potência do motor: {carro_gasolina.motor.potencia} cavalos")
+
+print(f"Carro elétrico: {carro_eletrico.marca} {carro_eletrico.modelo}")
+print(f"Tipo de motor: {carro_eletrico.motor.tipo}")
+print(f"Potência do motor: {carro_eletrico.motor.potencia} cavalos")
