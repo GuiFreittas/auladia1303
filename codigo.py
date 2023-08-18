@@ -1,36 +1,15 @@
-class ContaBancaria:
-    def __init__(self, numero_conta, nome_titular, saldo=0):
-        self.numero_conta = numero_conta
-        self.nome_titular = nome_titular
-        self.saldo = saldo
+class Autor:
+    def __init__(self, nome, data_nascimento):
+        self.nome = nome
+        self.data_nascimento = data_nascimento
 
-    def depositar(self, valor):
-        self.saldo += valor
-
-    def sacar(self, valor):
-        if valor > self.saldo:
-            print("Saldo insuficiente!")
-        else:
-            self.saldo -= valor
-
-    def imprimir_saldo(self):
-        print(f"Saldo atual da conta {self.numero_conta}: R$ {self.saldo:.2f}")
-
-   
-minha_conta = ContaBancaria("000-1", "Guilherme tem: ")
+class Livro:
+    def __init__(self, titulo, autor):
+        self.titulo = titulo
+        self.autor = autor
 
 
-minha_conta.imprimir_saldo() 
+autor_jk_rowling = Autor(nome="J.K. Rowling", data_nascimento="31 de julho de 2005")
+livro_harry_potter = Livro(titulo="Harry Potter e a Pedra Filosofal", autor=autor_jk_rowling)
 
-
-minha_conta.depositar(113.0)
-minha_conta.imprimir_saldo() 
-
-
-minha_conta.sacar(700.0)
-minha_conta.imprimir_saldo()  
-
-
-minha_conta.sacar(2000.0)  
-minha_conta.imprimir_saldo() 
-
+print(f"O autor do livro '{livro_harry_potter.titulo}' é {livro_harry_potter.autor.nome}, nascido em {livro_harry_potter.autor.data_nascimento}")
